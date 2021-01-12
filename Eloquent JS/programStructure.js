@@ -193,3 +193,39 @@
 //     return result;
    
 // }
+
+// Use Recursion to Create a Countdown
+
+// function countdown(n){
+//     return;
+//   }
+
+// function countup(n) {
+ 
+//   if (n < 1) {
+//     return [];
+//   } else {
+//     const countArray = countup(n - 1);
+//     countArray.push(n);
+//     return countArray;
+//   }
+// }
+// console.log(countup(5)); 
+
+
+function rangeOfNumbers(startNum, endNum) {
+  let arr;
+  if (startNum > endNum){
+    return []
+  } else {
+    arr = rangeOfNumbers(startNum, endNum -1);
+    arr.push(endNum)
+    // return arr;
+  }
+  return arr;
+
+  
+};
+
+rangeOfNumbers(3, 9);
+console.log('rangeOfNumbers:', rangeOfNumbers(3, 9))

@@ -213,19 +213,70 @@
 // console.log(countup(5)); 
 
 
-function rangeOfNumbers(startNum, endNum) {
-  let arr;
-  if (startNum > endNum){
-    return []
-  } else {
-    arr = rangeOfNumbers(startNum, endNum -1);
-    arr.push(endNum)
-    // return arr;
-  }
-  return arr;
+// function rangeOfNumbers(startNum, endNum) {
+//   let arr;
+//   if (startNum > endNum){
+//     return []
+//   } else {
+//     arr = rangeOfNumbers(startNum, endNum -1);
+//     arr.push(endNum)
+//     // return arr;
+//   }
+//   return arr;
 
   
-};
+// };
 
-rangeOfNumbers(3, 9);
-console.log('rangeOfNumbers:', rangeOfNumbers(3, 9))
+// rangeOfNumbers(3, 9);
+// console.log('rangeOfNumbers:', rangeOfNumbers(3, 9))
+
+// const makeServerRequest = new Promise((resolve, reject) => {
+//   // responseFromServer is set to false to represent an unsuccessful response from a server
+//   let responseFromServer = false;
+    
+//   if(responseFromServer) {
+//     resolve("We got the data");
+//   } else {  
+//     reject("Data not received");
+//   }
+// });
+
+// makeServerRequest.then(result => {
+//   console.log(result);
+// });
+// makeServerRequest.catch(error => {
+//   console.log(error)
+// })
+
+// function zeroArray(m, n) {
+//     // Creates a 2-D array with m rows and n columns of zeroes
+//     let newArray = [];
+//     for (let i = 0; i < m; i++) {
+//       // Adds the m-th row into newArray
+//       let row = [];  //Initiate a new row after every iteration.
+//       for (let j = 0; j < n; j++) {
+//         // Pushes n zeroes into the current row to create the columns
+//         row.push(0)
+//         ;
+//       }
+//       // Pushes the current row, which now has n zeroes in it, to the array
+//       newArray.push(row);
+//     }
+//     return newArray;
+//   }
+  
+//   let matrix = zeroArray(3, 2);
+//   console.log(matrix);
+
+
+// function filteredArray(arr, elem) {
+//     let newArr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//        if (arr[i].indexOf(elem) == -1) { //If the elem is not in the arr[i] then update the arr with the arr[i]
+//         newArr.push(arr[i])
+//       }
+//     }
+//     return newArr;
+//   }
+  
+//   console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));

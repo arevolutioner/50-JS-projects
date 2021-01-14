@@ -280,3 +280,188 @@
 //   }
   
 //   console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+// let users = {
+//     Alan: {
+//       online: true
+//     },
+//     Jeff: {
+//       online: true
+//     },
+//     Sarah: {
+//       online: true
+//     }
+//   }
+
+
+
+// function countOnline(usersObj) {
+//     let count = 0;
+//     for (let user in usersObj){
+        
+//         if (usersObj[user].online === true) {
+//             count++;
+           
+//         } 
+//     }
+//     return count;
+    
+//   }
+
+//   countOnline(users);
+//   console.log('countOnline:', countOnline(users))
+
+// Reverse string
+
+// function reverseString(str) {
+//     return str.split("").reverse().join("");
+// }
+// reverseString("hello");
+// console.log('reverseString:', reverseString("hello"))
+
+
+// function reverseString(str) {
+//     let newString = "";
+
+//     for (let i = str.length-1; i >= 0; i--) {
+//         newString += str[i];
+//     }
+//     return newString;
+   
+
+
+// }
+
+// reverseString('hello');
+// console.log('reverseString:', reverseString('hello'))
+
+// function factorialize(num) {
+//     console.log(num)
+//     let result;
+//     if (num ===1 || num === 0) {
+//       return 1
+//     }
+//     if (num === 2) {
+//       return 2
+//     }
+//     if ( num > 2) {
+//        result = factorialize(num-1)*num;
+       
+
+//     }
+//     return result;
+//   }
+  
+//   factorialize(5);
+//   console.log('factorialize:', factorialize(5))
+
+// function findLongestWordLength(str) {
+//     let arrayWords = str.split(" ");
+//     let longestWord = 0;
+
+//     for (let i = 0; i < arrayWords.length; i++) {
+//         if (arrayWords[i].length > longestWord) {
+//             longestWord = arrayWords[i].length
+
+//         }
+
+//     }
+//     return longestWord;
+
+   
+    
+    
+//   }
+  
+//   findLongestWordLength("The quick brown fox jumped over the lazy dog");
+//   console.log('findLongestWordLength:', findLongestWordLength("The quick brown fox jumped over the lazy dog"))
+
+// Return Largest Numbers in Arrays
+
+// function largestOfFour(arr) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         let largestNumber = arr[i][0];
+//         for (let j = 1; j < arr[i].length; j++) {
+//             if (arr[i][j] > largestNumber) {
+//                 largestNumber = arr[i][j];
+//             }
+
+//         }
+//          result[i] = largestNumber
+//     }
+//     return result;
+
+
+ 
+   
+//   }
+  
+//   console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+
+// Confirm the Ending
+
+// function confirmEnding(str, target) {
+//     if (str.endsWith(target)) {
+//         return true;
+
+//     }
+    
+//   }
+  
+//   confirmEnding("Bastian", "n");
+//   console.log('  confirmEnding("Bastian", "n");:',   confirmEnding("Bastian", "n"));
+
+// function confirmEnding(str, target) {
+//     return str.slice(str.length - target.length) === target;
+
+
+//   }
+  
+//   confirmEnding("Bastian", "n");
+//   console.log(' confirmEnding("Bastian", "n");:',  confirmEnding("Bastian", "n"));
+
+// function confirmEnding(str, target) {
+//     return str.slice(-target.length) === target
+//   }
+  
+//   confirmEnding("Bastian", "n");
+
+// Repeat a String Repeat a String
+
+// function repeatStringNumTimes(str, num) {
+//     if (num < 0) {
+//       return "";
+//     }else {
+//         if( num === 10) {
+//             return str
+//         }
+//     }
+//     let repeat = ""
+//     for (let i=0; i < num; i++) {
+//         repeat += str;
+//     }
+    
+//     return repeat;
+//   }
+  
+//   repeatStringNumTimes("abc", 3);
+//   console.log('  repeatStringNumTimes("abc", 3):',   repeatStringNumTimes("abc", 3))
+
+// Truncate a String
+
+function truncateString(str, num) {
+    let result = "";
+    if (num === 0) {
+        return str
+    }
+    result = str.slice(0, num+1) + "...";
+
+
+    return result;
+    
+  }
+  
+  truncateString("A-tisket a-tasket A green and yellow basket", 8);
+  
+

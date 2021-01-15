@@ -6,7 +6,7 @@
 
 
 // for (let i=0; i <= 100; i++){
-    
+
 //     if  (i % 3 == 0 && i % 5 ==0) {
 //         console.log("FizzBuzz")
 //     }  else if (i % 5 == 0){
@@ -119,8 +119,8 @@
 
 // function countBs(str){
 //     return countChar(str, "B");
-    
-   
+
+
 // };
 
 // function countChar(str, char){
@@ -189,9 +189,9 @@
 //     while (result === 0) {
 //       result = Math.random();
 //     }
-  
+
 //     return result;
-   
+
 // }
 
 // Use Recursion to Create a Countdown
@@ -201,7 +201,7 @@
 //   }
 
 // function countup(n) {
- 
+
 //   if (n < 1) {
 //     return [];
 //   } else {
@@ -224,7 +224,7 @@
 //   }
 //   return arr;
 
-  
+
 // };
 
 // rangeOfNumbers(3, 9);
@@ -233,7 +233,7 @@
 // const makeServerRequest = new Promise((resolve, reject) => {
 //   // responseFromServer is set to false to represent an unsuccessful response from a server
 //   let responseFromServer = false;
-    
+
 //   if(responseFromServer) {
 //     resolve("We got the data");
 //   } else {  
@@ -264,7 +264,7 @@
 //     }
 //     return newArray;
 //   }
-  
+
 //   let matrix = zeroArray(3, 2);
 //   console.log(matrix);
 
@@ -278,7 +278,7 @@
 //     }
 //     return newArr;
 //   }
-  
+
 //   console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 
 // let users = {
@@ -298,14 +298,14 @@
 // function countOnline(usersObj) {
 //     let count = 0;
 //     for (let user in usersObj){
-        
+
 //         if (usersObj[user].online === true) {
 //             count++;
-           
+
 //         } 
 //     }
 //     return count;
-    
+
 //   }
 
 //   countOnline(users);
@@ -327,7 +327,7 @@
 //         newString += str[i];
 //     }
 //     return newString;
-   
+
 
 
 // }
@@ -346,12 +346,12 @@
 //     }
 //     if ( num > 2) {
 //        result = factorialize(num-1)*num;
-       
+
 
 //     }
 //     return result;
 //   }
-  
+
 //   factorialize(5);
 //   console.log('factorialize:', factorialize(5))
 
@@ -368,11 +368,11 @@
 //     }
 //     return longestWord;
 
-   
-    
-    
+
+
+
 //   }
-  
+
 //   findLongestWordLength("The quick brown fox jumped over the lazy dog");
 //   console.log('findLongestWordLength:', findLongestWordLength("The quick brown fox jumped over the lazy dog"))
 
@@ -393,10 +393,10 @@
 //     return result;
 
 
- 
-   
+
+
 //   }
-  
+
 //   console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
 
 // Confirm the Ending
@@ -406,9 +406,9 @@
 //         return true;
 
 //     }
-    
+
 //   }
-  
+
 //   confirmEnding("Bastian", "n");
 //   console.log('  confirmEnding("Bastian", "n");:',   confirmEnding("Bastian", "n"));
 
@@ -417,14 +417,14 @@
 
 
 //   }
-  
+
 //   confirmEnding("Bastian", "n");
 //   console.log(' confirmEnding("Bastian", "n");:',  confirmEnding("Bastian", "n"));
 
 // function confirmEnding(str, target) {
 //     return str.slice(-target.length) === target
 //   }
-  
+
 //   confirmEnding("Bastian", "n");
 
 // Repeat a String Repeat a String
@@ -441,27 +441,55 @@
 //     for (let i=0; i < num; i++) {
 //         repeat += str;
 //     }
-    
+
 //     return repeat;
 //   }
-  
+
 //   repeatStringNumTimes("abc", 3);
 //   console.log('  repeatStringNumTimes("abc", 3):',   repeatStringNumTimes("abc", 3))
 
 // Truncate a String
 
-function truncateString(str, num) {
-    let result = "";
-    if (num === 0) {
-        return str
+// function truncateString(str, num) {
+//     let result = "";
+//     if (num === 0) {
+//         return str
+//     }
+//     result = str.slice(0, num+1) + "...";
+
+
+//     return result;
+
+//   }
+
+//   truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+// function titleCase(str) {
+//     str = str.split(' ');
+
+//     for (let i = 0; i < str.length; i++) {
+//       str[i] = str[i].toLowerCase().split('');
+//       str[i][0] = str[i][0].toUpperCase();
+//       str[i] = str[i].join('');
+//     }
+
+//     return str.join(' ');
+//   }
+
+//   titleCase("I'm a Little tea pot");
+
+function frankenSplice(arr1, arr2, n) {
+    let resultArray = [];
+    let copiedArr2 = arr2.slice();
+    let cutArr2 = copiedArr2.splice(n)
+    for (let i = 0; i < arr1.length; i++) {
+        copiedArr2.push(arr1[i])
     }
-    result = str.slice(0, num+1) + "...";
+    resultArray = copiedArr2.concat(cutArr2)
+    return resultArray;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6]);
 
 
-    return result;
-    
-  }
-  
-  truncateString("A-tisket a-tasket A green and yellow basket", 8);
-  
 

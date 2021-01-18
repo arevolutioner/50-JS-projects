@@ -450,18 +450,71 @@
 
 // Truncate a String
 
-function truncateString(str, num) {
-    let result = "";
-    if (num === 0) {
-        return str
-    }
-    result = str.slice(0, num+1) + "...";
+// function truncateString(str, num) {
+//     let result = "";
+//     if (num === 0) {
+//         return str;
+//     }
+//     if (str.length > num) {
 
-
-    return result;
+//         result = str.slice(0, num) + "...";
+//         return result;
+//     }else {
+//         return str;
+//     }
     
+    
+    
+//   }
+  
+//   truncateString("A-tisket a-tasket A green and yellow basket", 8);
+//   console.log('truncateString:', truncateString("A-tisket a-tasket A green and yellow basket", 8))
+// Finders Keepers
+
+
+// function findElement(arr, func) {
+//     let num = 0;
+//     for  (let i =0; i <arr.length; i++) {
+//         num = arr[i];
+//         if (func(num)) {
+//             return num
+//         }
+//     }
+//     return undefined 
+   
+//   }
+  
+//   findElement([1, 2, 3, 4], num => num % 2 === 0);
+//   console.log('findElement:', findElement([1, 2, 3, 4], num => num % 2 === 0))
+
+// Boo who
+
+// function booWho(bool) {
+//     if (bool===true || bool === false) {
+//       return true;
+//     }
+//     return false
+    
+//   }
+  
+//   booWho(null);
+
+// Title Case a Sentence
+
+function titleCase(str) {
+  let result = []
+
+  for ( let i = 0; i < str.split(" ").length; i++) {
+    result = str.split(" ")[i].toUpperCase();
+  }
+
+    // for ( let item of str.split(" ")) {
+    //   result = item.toUpperCase()
+    // }
+
+      
+    return result;
   }
   
-  truncateString("A-tisket a-tasket A green and yellow basket", 8);
-  
-
+  titleCase("I'm a little tea pot");
+  console.log(titleCase("I'm a little tea pot"));

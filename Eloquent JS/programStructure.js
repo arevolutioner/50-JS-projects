@@ -1040,20 +1040,141 @@ Note: Your function should not use any kind of for or while loops or the forEach
 // alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 // Only change code below this line
-function urlSlug(title) {
-  //replace the spaces between words with (-)
-   let newStr = title.split(" ").join("-");
-   console.log(newStr);
+// function urlSlug(title) {
+//   //replace the spaces between words with (-)
+//    let newStr = title.trim().split(/\s+/).join("-").toLowerCase();
+//    console.log(newStr);
 
-  //convert all of the str's words into lower-cased letters
-  // the output should not have any emtpy spaces
+//   //convert all of the str's words into lower-cased letters
+//   // the output should not have any emtpy spaces
   
-  newStr = title.map()
 
 
-  return newStr;
+//   return newStr;
 
 
+// }
+// // Only change code above this line
+// urlSlug(" Winter Is  Coming");
+
+// Introduction to Currying and Partial Application
+// function add(x) {
+//   // Only change code below this line
+//    return y => z => x + y +z;
+
+
+
+//   // Only change code above this line
+// }
+// add(10)(20)(30);
+// console.log('add(10)(20)(30):', add(10)(20)(30));
+// function sumAll(arr) {
+//     let max = Math.max(arr[0], arr[1]);
+//     let min = Math.min(arr[0], arr[1]);
+//     let temp = 0;
+//     for (var i = min; i <= max; i++) {
+//       temp += i;
+//     }
+//     return temp;
+//   }
+  
+//   sumAll([1, 4]);
+//   console.log('sumAll:', sumAll([1, 4]))
+
+//   const sumAll = arr => {
+//     // Buckle up everything to one!
+//     const startNum = arr[0];
+//     const endNum = arr[1];
+  
+//     // Get the count of numbers between the two numbers by subtracting them and add 1 to the absolute value.
+//     // ex. There are |1-4| + 1 = 4, (1, 2, 3, 4), 4 numbers between 1 and 4.
+//     const numCount = Math.abs(startNum - endNum) + 1;
+  
+//     // Using Arithmetic Progression summing formula
+//     const sum = ((startNum + endNum) * numCount) / 2;
+//     return sum;
+//   };
+// function diffArray(arr1, arr2) {
+//     var newArr = [];
+//     if (arr1.length === arr2.length || arr1.length > arr2.length ) {
+//         for (let i=0; i < arr1.length; i++) {
+//             for (let j=0; j < arr2.length; j++) {
+//               if (arr1[i] !== arr2[j]) {
+//                 newArr.push(arr1[i]);
+                
+//               }
+//             }
+//           }
+//     } else {
+//         for (let i=0; i < arr2.length; i++) {
+//             for (let j=0; j < arr1.length; j++) {
+//               if (arr2[i] !== arr1[j]) {
+//                 newArr.push(arr2[i]);
+//               }
+//             }
+//           }
+//     }
+    
+//     return newArr;
+//     console.log('newArr:', newArr);
+//   }
+  
+//   console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+
+// (Imperative Solution)
+// function diffArray(arr1, arr2) {
+//     var newArr = [];
+  
+//     function onlyInFirst(first, second) {
+//       // Looping through an array to find elements that don't exist in another array
+//       for (var i = 0; i < first.length; i++) {
+//         if (second.indexOf(first[i]) === -1) {
+//           // Pushing the elements unique to first to newArr
+//           newArr.push(first[i]);
+//         }
+//       }
+//     }
+  
+//     onlyInFirst(arr1, arr2);
+//     onlyInFirst(arr2, arr1);
+  
+//     return newArr;
+//   }
+  
+//   diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+//   console.log('diffArray:', diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))
+
+//   (Declarative Solution):
+// function diffArray(arr1, arr2) {
+//     return arr1.concat(arr2).filter(item => !arr1.includes(item) || !arr2.includes(item));
+    
+//   }
+  
+//   diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+//   console.log('diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);:', diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+
+/*/
+Intermediate Algorithm Scripting: Seek and Destroy
+You will be provided with an initial array (the first argument in the destroyer function), 
+followed by one or more arguments. 
+Remove all elements from the initial array that are of the same value as these arguments.
+
+Note
+You have to use the arguments object.
+/*/
+// Imperative solution
+function destroyer(arr) {
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arguments[1] || arr[i]  === arguments[2]) {
+            arr.splice(i)
+        }
+
+
+    return arr;
+  }
 }
-// Only change code above this line
-urlSlug(" Winter Is  Coming")
+  
+  
+  destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+  console.log('destroyer:',  destroyer([1, 2, 3, 1, 2, 3], 2, 3))

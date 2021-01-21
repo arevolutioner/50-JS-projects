@@ -1163,18 +1163,395 @@ Note
 You have to use the arguments object.
 /*/
 // Imperative solution
-function destroyer(arr) {
+// function destroyer(arr) {
+//     let args = [...arguments];
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j=0; j < args.length; j++) {
+//             if (arr[i] === args[j]) {
+//                 delete arr[i]
+
+//             }
+//         }
+//     }
+//     return arr.filter(Boolean)
+ 
+//   }
+
+  
+  
+//   destroyer([1, 2, 3, 1, 2, 3], 2, 3); 
+//   console.log('destroyer:',  destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+
+// function whatIsInAName(collection, source) {
+//     var srcKeys = Object.keys(source);
+//     console.log(srcKeys)
+//   // filter the collection
+//   return collection.filter((obj) => {
+//     for (var i = 0; i < srcKeys.length; i++) {
+//       if (
+//         !obj.hasOwnProperty(srcKeys[i]) ||
+//         obj[srcKeys[i]] !== source[srcKeys[i]]
+//       ) {
+//         return false;
+//       }
+//     }
+//     return true;
+//   });
+// }
+//   whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+//   console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+// function spinalCase(str) {
+//     return str
+//     .split(/\s|_|(?=[A-Z])/)
+//     .join("-")
+//     .toLowerCase();
+// }
+
+// spinalCase("This Is Spinal Tap");
+
+//Declarative
+
+// function translatePigLatin(str) {
+//     let consonantRegex = /^[^aeoui]+/;
+//     let myConsonants = str.match(consonantRegex) 
+//     // console.log(myConcosnants); 
+//     return myConsonants !== null ? str.replace(consonantRegex, "").concat(myConsonants).concat("ay") : str.concat("way");
+//     return str;
+//   }
+  
+//   translatePigLatin("consonant");
+//   console.log('translatePigLatin:', translatePigLatin("consonant"));
+
+// Search and Replace
+// function myReplace(str, before, after) {
+//     // Find index where before is on string
+//     var index = str.indexOf(before);
+//     // Check to see if the first letter is uppercase or not
+//     if (str[index] === str[index].toUpperCase()) {
+//       // Change the after word to be capitalized before we use it.
+//       after = after.charAt(0).toUpperCase() + after.slice(1);
+//     } else {
+//       // Change the after word to be uncapitalized before we use it.
+//       after = after.charAt(0).toLowerCase() + after.slice(1);
+//     }
+//     // Now replace the original str with the edited one.
+//     str = str.replace(before, after);
+  
+//     return str;
+//   }
+  
+//   // test here
+
+// DNA Pairing
+
+// // Return each strand as an array of two elements, the original and the pair.
+// var paired = [];
+
+// function pairElement(str) {
+//     // Return each strand as an array of two elements, the original and the pair.
+//     var paired = [];
+  
+//     // Function to check with strand to pair.
+//     var search = function(char) {
+//       switch (char) {
+//         case "A":
+//           paired.push(["A", "T"]);
+//           break;
+//         case "T":
+//           paired.push(["T", "A"]);
+//           break;
+//         case "C":
+//           paired.push(["C", "G"]);
+//           break;
+//         case "G":
+//           paired.push(["G", "C"]);
+//           break;
+//       }
+//     };
+  
+//     // Loops through the input and pair.
+//     for (var i = 0; i < str.length; i++) {
+//       search(str[i]);
+//     }
+  
+//     return paired;
+//   }
+  
+//   // test here
+//   pairElement("GCG");
+//   console.log('  pairElement("GCG"):',   pairElement("GCG"))
+
+
+// function uniteUnique(arr) {
+//     // Creates an empty array to store our final result.
+//    var finalArray = [];
+ 
+//    // Loop through the arguments object to truly make the program work with two or more arrays
+//    // instead of 3.
+//    for (var i = 0; i < arguments.length; i++) {
+//      var arrayArguments = arguments[i];
+ 
+//      // Loops through the array at hand
+//      for (var j = 0; j < arrayArguments.length; j++) {
+//        var indexValue = arrayArguments[j];
+ 
+//        // Checks if the value is already on the final array.
+//        if (finalArray.indexOf(indexValue) < 0) {
+//          finalArray.push(indexValue);
+//        }
+//      }
+//  }
+//  }
+ 
+//  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])
+
+//  function uniteUnique(arr) {
+//     var args = [...arguments];
+//     var result = [];
+//     for (var i = 0; i < args.length; i++) {
+//       for (var j = 0; j < args[i].length; j++) {
+//         if (!result.includes(args[i][j])) {
+//           result.push(args[i][j]);
+//         }
+//       }
+//     }
+//     return result;
+//   }
+  
+//   uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])
+
+// Convert HTML Entities
+// function convertHTML(str) {
+//     // Split by character to avoid problems.
+  
+//     var temp = str.split("");
+  
+//     // Since we are only checking for a few HTML elements, use a switch
+  
+//     for (var i = 0; i < temp.length; i++) {
+//       switch (temp[i]) {
+//         case "<":
+//           temp[i] = "&lt;";
+//           break;
+//         case "&":
+//           temp[i] = "&amp;";
+//           break;
+//         case ">":
+//           temp[i] = "&gt;";
+//           break;
+//         case '"':
+//           temp[i] = "&quot;";
+//           break;
+//         case "'":
+//           temp[i] = "&apos;";
+//           break;
+//       }
+//     }
+  
+//     temp = temp.join("");
+//     return temp;
+//   }
+  
+//   //test here
+//   convertHTML("Dolce & Gabbana");
+
+// Sum All Odd Fibonacci Numbers
+
+// function sumFibs(num) {
+//     let result = 0;
+//     let prevNumber = 0;
+//     let currNumber = 1;
+//     if (num === 1 || num === 2) {
+//       return 1
+//     } else {
+//       while (currNumber <= num) {
+//         if (currNumber % 2 !== 0){
+//          result += currNumber ;
+  
+//         }
+//       currNumber += prevNumber;
+//       prevNumber = currNumber - prevNumber;
+        
+//       }
+  
+//     }
+//     return result
+   
+  
     
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === arguments[1] || arr[i]  === arguments[2]) {
-            arr.splice(i)
-        }
+//   }
+  
+//    console.log(sumFibs(4));
+
+// Intermediate Algorithm Scripting: Sum All Primes
+
+  // Helper function to check primality
+//   function sumPrimes(num) {
+//     // Helper function to check primality
+//    function isPrime(num) {
+//        console.log(num)
+//      for (let i = 2; i <= Math.sqrt(num); i++) {
+//          console.log(Math.sqrt(num))
+//        if (num % i == 0)
+//          return false;
+//      }
+//      return true;
+//    }
+ 
+//    // Check all numbers for primality
+//    let sum = 0;
+//    for (let i = 2; i <= num; i++) {
+//      if (isPrime(i))
+//        sum += i;
+//    }
+//    return sum;
+//  }
+//  sumPrimes(10);
+
+// Smallest Common Multiple
+
+// function smallestCommons(arr) {
+//     // Sort array from greater to lowest
+//     // This line of code was from Adam Doyle (http://github.com/Adoyle2014)
+//     arr.sort(function(a, b) {
+      
+//       return b - a;
+//     });
+//     console.log('arr:', arr)
+  
+//     // Create new array and add all values from greater to smaller from the
+//     // original array.
+//     var newArr = [];
+//     for (var i = arr[0]; i >= arr[1]; i--) {
+//       newArr.push(i);
+//     }
+//     console.log('arr:', newrr)
+  
+//     // Variables needed declared outside the loops.
+//     var quot = 0;
+//     var loop = 1;
+//     var n;
+  
+//     // Run code while n is not the same as the array length.
+//     do {
+//       quot = newArr[0] * loop * newArr[1];
+//       for (n = 2; n < newArr.length; n++) {
+//         if (quot % newArr[n] !== 0) {
+//           break;
+//         }
+//       }
+  
+//       loop++;
+//     } while (n !== newArr.length);
+  
+//     return quot;
+//   }
+  
+//   // test here
+//   smallestCommons([1, 5]);
+
+// Drop it
+
+// function dropElements(arr, func) {
+//     if (arr.length === 0 || func(arr[0])) {
+//       return arr;
+//     } else {
+//       arr.shift();
+//       return dropElements(arr, func);
+//     }
+//   }
+
+// Steamroller
+
+// function steamrollArray(arr) {
+//     return arr.flat(4);
+//   }
+  
+//   steamrollArray([1, [2], [3, [[4]]]]);
+//   console.log('  steamrollArray([1, [2], [3, [[4]]]]);:',   steamrollArray([1, [2], [3, [[4]]]]));
+
+// function steamrollArray(arr) {
+//     let flattenedArray = [];
+  
+//     // Create function that adds an element if it is not an array.
+//     // If it is an array, then loops through it and uses recursion on that array.
+//     var flatten = function(arg) {
+//       if (!Array.isArray(arg)) {
+//         flattenedArray.push(arg);
+//       } else {
+//         for (var a in arg) {
+//           flatten(arg[a]);
+//         }
+//       }
+//     };
+  
+//     // Call the function for each element in the array
+//     arr.forEach(flatten);
+//     return flattenedArray;
+//   }
+
+// Binary Agents
+
+// function binaryAgent(str) {
+//     let biString = str.split(' ');
+//     let uniString = [];
+//     for (var i = 0; i < biString.length; i++) {
+//         uniString.push(String.fromCharCode(parseInt(biString[i], 2)));
+//       } 
 
 
-    return arr;
-  }
-}
+//     return  uniString.join("");;
+//   }
   
+//   binaryAgent("01000001 01110010 01100101 01101110 
+// 00100111 01110100 00100000 01100010 01101111 01101110 01100110
+//  01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+// Scripting: Everything Be True
+
+// function addTogether() {
+//     const checkNum = (arg) => {
+//         if (typeof arg !== "number") {
+//             return undefined
+//         } else {
+//             return arg
+//         }
+//     };
+//     if (arguments.length > 1) {
+//         let a = checkNum(arguments[0]);
+//         let b = checkNum(arguments[1]);
+//         if (a === undefined || b === undefined) {
+//           return undefined;
+//         } else {
+//           return a + b;
+//         }
+//       } else {
+//         // If only one parameter was found, returns a new function that expects two
+//         // Store first argument before entering the new function scope
+//         let c = arguments[0];
+    
+//         // Check the number again, must be outside the function to about returning an object
+//         // instead of undefined.
+//         if (checkNum(c)) {
+//           // Return function that expect a second argument.
+//           return function(arg2) {
+//             // Check for non-numbers
+//             if (c === undefined || checkNum(arg2) === undefined) {
+//               return undefined;
+//             } else {
+//               // if numbers then add them.
+//               return c + arg2;
+//             }
+//           };
+//         }
+//       }
+
+    
+       
+//        return false;
+//   }
   
-  destroyer([1, 2, 3, 1, 2, 3], 2, 3);
-  console.log('destroyer:',  destroyer([1, 2, 3, 1, 2, 3], 2, 3))
+//   addTogether(2,3);
+
+

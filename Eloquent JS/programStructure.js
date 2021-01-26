@@ -1609,3 +1609,220 @@ You have to use the arguments object.
   
 //   orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
  
+// this solution performs at minimum 7x better, at maximum infinitely better.
+// function palindrome(str) {
+//   //assign a front and a back pointer
+//   let front = 0;
+//   let back = str.length - 1;
+  
+
+  //back and front pointers won't always meet in the middle, so use (back > front)
+//   while (back > front) {
+//     increments front pointer if current character doesn't meet criteria
+//     if (str[front].match(/[\W_]/)) {
+//       front++;
+//       continue;
+//     }
+//     //decrements back pointer if current character doesn't meet criteria
+//     if (str[back].match(/[\W_]/)) {
+//       back--;
+//       continue;
+//     }
+//     //finally does the comparison on the current character
+//     if (str[front].toLowerCase() !== str[back].toLowerCase()){
+//       return false;
+
+//     } 
+//     front++;
+  
+//     back--;
+//   }
+
+//   //if the whole string has been compared without returning false, it's a palindrome!
+//   return true;
+// }
+
+// palindrome("eye");
+// console.log('palindrome:', palindrome("sputnik"));
+
+// const converToRoman = (num) => {
+//   const decimalValue = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  // const romanNumeral = [
+  //   "M",
+  //   "CM",
+  //   "D",
+  //   "CD",
+  //   "C",
+  //   "XC",
+  //   "L",
+  //   "XL",
+  //   "X",
+  //   "IX",
+  //   "V",
+  //   "IV",
+  //   "I"
+  // ];
+
+//   let romanized = "";
+
+//   for (var index = 0; index < decimalValue.length; index++) {
+//     while (decimalValue[index] <= num) {
+//       romanized += romanNumeral[index];
+//       num -= decimalValue[index];
+//     }
+//   }
+
+//   return romanized;
+// };
+// }
+
+// converToRoman(36);
+// console.log(converToRoman(36));
+
+// CONVERT TO ROMAN
+
+// const convertToROman = (num) => {
+//   const decimalValue = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+//   const romanNumeral = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+//   let romanized = "";
+//   for (let i = 0; i < decimalValue.length; i++) {
+//     while (decimalValue[i] <= num) {
+//       romanized += romanNumeral[i];
+//       num -= decimalValue[i]
+//     };
+//   };
+// return romanized
+// }
+// convertToROman(265);
+// console.log('convertToROman(265):', convertToROman(265))
+
+// Caesars Cipher
+
+// const rot13 = (str) => {
+//   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+//   return str
+//       .split('')
+//       .map(char => {  
+//         const pos = alphabet.indexOf(char);      
+//         return pos >= 0 ? alphabet[(pos + 13) % 26] : char;
+//       })
+//       .join('');
+// }
+
+// function rot13(str) {
+//   str.toUpperCase(); // Convert `str` string to uppercase letters
+//   var abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+//   var nop = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+//   var arr = str.split(""); // Splits `str` into an array where each element is an individual character (including non-alphabetic characters)
+
+//     for (var i = 0; i < arr.length; i++) { // Iterate number of `arr` elements
+//       for (var j = 0; j < abc.length; j++) { // Iterate number of `abc`/`nop` array elements
+//       if (arr[i] === abc[j]) {
+//         arr[i] = nop[j]; // Swap the `arr` character for the corresponding `nop` array character
+//       } else if (arr[i] === nop[j]) {
+//         arr[i] = abc[j]; // Swap the `arr` character for the corresponding `abc` array character
+//       }
+//     }
+//   }
+
+//   return arr.join(""); // Join all `arr` array characters back into a string, returning the deciphered `str` with all non-alphabetical characters preserved
+// }
+
+// rot13("FHCRE FRPERG!!!");
+// console.log(rot13("FHCRE FRPERG!!!"))
+
+// Telephone Number Validator
+// const testPhoneNumber = (str) => {
+//   var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+//   return regex.test(str)
+// }
+
+// CASH REGISTER
+// Create an array of objects which hold the denominations and their values
+// var denom = [
+//   { name: "ONE HUNDRED", val: 100.0 },
+//   { name: "TWENTY", val: 20.0 },
+//   { name: "TEN", val: 10.0 },
+//   { name: "FIVE", val: 5.0 },
+//   { name: "ONE", val: 1.0 },
+//   { name: "QUARTER", val: 0.25 },
+//   { name: "DIME", val: 0.1 },
+//   { name: "NICKEL", val: 0.05 },
+//   { name: "PENNY", val: 0.01 }
+// ];
+
+// function checkCashRegister(price, cash, cid) {
+//   var output = { status: null, change: [] };
+//   var change = cash - price;
+
+//   // Transform CID array into drawer object
+//   var register = cid.reduce(
+//     function(acc, curr) {
+//       acc.total += curr[1];
+//       acc[curr[0]] = curr[1];
+//       return acc;
+//     },
+//     { total: 0 }
+//   );
+//   console.log(register)
+
+//   // Handle exact change
+//   if (register.total === change) {
+//     output.status = "CLOSED";
+//     output.change = cid;
+//     return output;
+//   }
+
+//   // Handle obvious insufficient funds
+//   if (register.total < change) {
+//     output.status = "INSUFFICIENT_FUNDS";
+//     return output;
+//   }
+
+//   // Loop through the denomination array
+//   var change_arr = denom.reduce(function(acc, curr) {
+//     var value = 0;
+//     // While there is still money of this type in the drawer
+//     // And while the denomination is larger than the change remaining
+//     while (register[curr.name] > 0 && change >= curr.val) {
+//       change -= curr.val;
+//       register[curr.name] -= curr.val;
+//       value += curr.val;
+
+//       // Round change to the nearest hundreth deals with precision errors
+//       change = Math.round(change * 100) / 100;
+//     }
+//     // Add this denomination to the output only if any was used.
+//     if (value > 0) {
+//       acc.push([curr.name, value]);
+//     }
+//     return acc; // Return the current change_arr
+//   }, []); // Initial value of empty array for reduce
+
+//   // If there are no elements in change_arr or we have leftover change, return
+//   // the string "Insufficient Funds"
+//   if (change_arr.length < 1 || change > 0) {
+//     output.status = "INSUFFICIENT_FUNDS";
+//     return output;
+//   }
+
+//   // Here is your change, ma'am.
+//   output.status = "OPEN";
+//   output.change = change_arr;
+//   return output;
+// }
+
+// // test here
+// checkCashRegister(19.5, 20.0, [
+//   ["PENNY", 1.01],
+//   ["NICKEL", 2.05],
+//   ["DIME", 3.1],
+//   ["QUARTER", 4.25],
+//   ["ONE", 90.0],
+//   ["FIVE", 55.0],
+//   ["TEN", 20.0],
+//   ["TWENTY", 60.0],
+//   ["ONE HUNDRED", 100.0]
+// ]);
+
